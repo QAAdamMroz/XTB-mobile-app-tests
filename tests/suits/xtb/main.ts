@@ -6,7 +6,7 @@ class main{
         {
     describe("Mobile app testing", () => {
     it("Start panel", async () => {
-      await expect(StartPage.welcomeBanner).toBeDisplayed();
+      await expect((StartPage.welcomeBanner) as any).toBeDisplayed();
         
       })
       it("Move to next step", async () => {
@@ -16,8 +16,9 @@ class main{
         it("Open register view", async () => {
           await StartPage.chooseDemoRegisterFlow();
           })
-          it("Open register view", async () => {
-            await expect(StartPage.headerDemo).toBeDisplayed();
+          it("Register demo account flow", async () => {
+            await expect((StartPage.headerDemo) as any).toBeDisplayed();
+            await StartPage.fullyFillRegisterFields();
             })
         })
     })
